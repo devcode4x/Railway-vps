@@ -1,0 +1,21 @@
+Port 22
+ListenAddress 0.0.0.0
+HostKey /home/dev/.devbox/ssh_host_ed25519_key
+HostKey /home/dev/.devbox/ssh_host_rsa_key
+AllowUsers dev
+PermitRootLogin no
+PasswordAuthentication yes
+KbdInteractiveAuthentication no
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys /etc/ssh/authorized_keys.d/%u
+MaxAuthTries 4
+LoginGraceTime 30
+MaxStartups 10:30:60
+PerSourceMaxStartups 3
+UsePAM yes
+ClientAliveInterval 60
+ClientAliveCountMax 3
+X11Forwarding no
+PrintMotd no
+AcceptEnv LANG LC_* COLORTERM
+Subsystem sftp /usr/lib/openssh/sftp-server
